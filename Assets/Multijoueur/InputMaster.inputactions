@@ -9,7 +9,7 @@
                     "name": "BS",
                     "type": "Button",
                     "id": "48aa60ff-1044-4ea1-90a4-cdba79120b4e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -165,7 +165,7 @@
                 {
                     "name": "",
                     "id": "7004d0c3-9946-4edb-93f0-de60602c0e5b",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard Left",
@@ -770,7 +770,7 @@
                 {
                     "name": "",
                     "id": "01413a24-c041-469c-9da9-69817db25d24",
-                    "path": "<Keyboard>/t",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad;Keyboard Left",
