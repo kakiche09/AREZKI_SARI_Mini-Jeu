@@ -10,9 +10,10 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float tempsDeVie = 4f;
     [SerializeField] private float rayonSpirale = 10f;
     [SerializeField] private float frequenceSpirale = 4f; 
-
+    [SerializeField] private float tempsDeVieSpirale = 2f;
+    private GameObject lanceur;
     private float vitesseActuelle;
-    [SerializeField] private float acceleration = 50f; // Accélération en unités/sec²
+    [SerializeField] private float acceleration = 50f; 
     private Vector2 direction;
     private Transform cible;
     private float angleSpirale;
@@ -34,19 +35,22 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Initialiser(Vector2 directionInitiale, Transform cibleSuivie, TypeProjectile type)
+    public void Initialiser(Vector2 directionInitiale, Transform cibleSuivie, TypeProjectile type, GameObject lancePar)
     {
         direction = directionInitiale.normalized;
         cible = cibleSuivie;
         typeProjectile = type;
         vitesseActuelle = 0f;
+        lanceur = lancePar;
         Destroy(gameObject, tempsDeVie);
     }
 
+
     public void DeplacementLigne()
     {
-        transform.Translate(direction * vitesse * Time.deltaTime, Space.World);
+        GetComponent<Rigidbody2D>().velocity = direction * vitesse;
     }
+
 
     private void DeplacementSpirale()
     {
@@ -67,5 +71,28 @@ public class Projectile : MonoBehaviour
         vitesseActuelle = Mathf.Min(vitesseActuelle + acceleration * Time.deltaTime, vitesse);
         transform.Translate(direction * vitesseActuelle * Time.deltaTime, Space.World);
     }
-   
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject == lanceur) return;
+
+        Slimes cibleSlime = collision.gameObject.GetComponent<Slimes>();
+        if (cibleSlime != null)
+        {
+            cibleSlime.SubirDegats(1);
+            Destroy(gameObject);
+            return;
+        }
+
+        Personnage ciblePerso = collision.gameObject.GetComponent<Personnage>();
+        if (ciblePerso != null)
+        {
+            ciblePerso.SubirDegats(1);
+            Destroy(gameObject);
+            return;
+        }
+        
+        Destroy(gameObject);
+    }
 }

@@ -7,14 +7,14 @@ public class Personnage : MonoBehaviour
 {
     private PlayerInputReader inputReader;
     private Vector2 direction;
-    private Rigidbody2D Rb;
+    public Rigidbody2D Rb {get; private set;}
     [SerializeField] private float dashForce = 20f;
     [SerializeField] private float dashDuration = 0.16f;
     [SerializeField] private float dashCooldown = 1f;
     private bool isDashing = false;
     private bool canDash = true;
+    [SerializeField] public float vitesse { get; private set; }
 
-    [SerializeField] private float vitesse = 3f;
     public SpriteRenderer spriteRenderer    { get; protected set; }
     public NavMeshAgent agent               { get; private set;   }
     public Animator animator                { get; private set;   }
@@ -26,6 +26,9 @@ public class Personnage : MonoBehaviour
     private Transform cibleActuelle;
     public enum TypeAttaque { Directe, Spirale, Poursuite };
     public TypeAttaque typeAttaque;
+    private int vie = 100;
+
+
     void Start()
     {
         Rb = GetComponent<Rigidbody2D>();
@@ -33,6 +36,7 @@ public class Personnage : MonoBehaviour
         inputReader = GetComponent<PlayerInputReader>();
         animator = GetComponent<Animator>();
         typeAttaque = TypeAttaque.Directe; 
+        vitesse = 3f;
 
         inputReader.BS.callback += Dash;
         inputReader.LS_m.callback += Deplacer;
@@ -55,7 +59,6 @@ public class Personnage : MonoBehaviour
         Inclinaison();
         animator.SetFloat("Vitesse", Rb.velocity.magnitude);
         animator.SetBool("IsDashing", isDashing);
-        Debug.Log("IsDashing: " + isDashing);
     }
 
     void Dash()
@@ -161,9 +164,10 @@ public class Personnage : MonoBehaviour
     {
         if (direction == Vector2.zero) return;
         {
-            GameObject projectile = Instantiate(projectilePrefab, pointDeTir.position, Quaternion.identity);
-            Projectile proj = projectile.GetComponent<Projectile>();
-            proj.Initialiser(direction, null, Projectile.TypeProjectile.Directe);
+            Vector2 decalage = direction.normalized * 0.7f;
+            GameObject projectile = Instantiate(projectilePrefab, (Vector2)transform.position + decalage, Quaternion.identity);
+            projectile.GetComponent<Projectile>().Initialiser(direction, null, Projectile.TypeProjectile.Directe,gameObject);
+
         }
     }
     
@@ -171,9 +175,9 @@ public class Personnage : MonoBehaviour
     {
         if (direction == Vector2.zero) return;
         {    
-            GameObject projectile = Instantiate(projectilePrefab, pointDeTir.position, Quaternion.identity);
-            Projectile proj = projectile.GetComponent<Projectile>();
-            proj.Initialiser(direction, null, Projectile.TypeProjectile.Spirale);
+            Vector2 decalage = direction.normalized * 0.7f;
+            GameObject projectile = Instantiate(projectilePrefab, (Vector2)transform.position + decalage, Quaternion.identity);
+            projectile.GetComponent<Projectile>().Initialiser(direction, null, Projectile.TypeProjectile.Spirale, gameObject);
         }
     }
 
@@ -183,10 +187,14 @@ public class Personnage : MonoBehaviour
         if (cibleActuelle != null)
         {
             GameObject projectile = Instantiate(projectilePrefab, pointDeTir.position, Quaternion.identity);
-            Projectile proj = projectile.GetComponent<Projectile>();
-            proj.Initialiser(Vector2.zero, cibleActuelle, Projectile.TypeProjectile.Poursuite);
+            projectile.GetComponent<Projectile>().Initialiser(Vector2.zero, cibleActuelle, Projectile.TypeProjectile.Poursuite, gameObject);
         }
        
     }   
+    public void SubirDegats(int degats)
+    {   
+        vie -= degats;
+
+    }
     
 }
