@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,16 +19,22 @@ public class Personnage : MonoBehaviour
     public SpriteRenderer spriteRenderer    { get; protected set; }
     public NavMeshAgent agent               { get; private set;   }
     public Animator animator                { get; private set;   }
+    private int viesRestantes =100;
 
     [SerializeField] private Transform pointDeTir;
     [SerializeField] private float porteeRecherche = 10f;
-    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private GameObject projectileDirect;
+    [SerializeField] private GameObject projectileSpiral;
+    [SerializeField] private GameObject projectilePoursuite;
 
     private Transform cibleActuelle;
     public enum TypeAttaque { Directe, Spirale, Poursuite };
     public TypeAttaque typeAttaque;
-    private int vie = 100;
-
+    private int coeursRestants = 3;
+    public int CoeursRestants => coeursRestants;
+    public int ViesRestantes => viesRestantes;
+    public int score = 0;
+    public int progressionArme = 2;
 
     void Start()
     {
@@ -35,23 +42,16 @@ public class Personnage : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         inputReader = GetComponent<PlayerInputReader>();
         animator = GetComponent<Animator>();
-        typeAttaque = TypeAttaque.Directe; 
         vitesse = 3f;
 
         inputReader.BS.callback += Dash;
         inputReader.LS_m.callback += Deplacer;
         inputReader.BE.callback += Attaquer; 
+        inputReader.BN.callback += ChangerArme;
+
+        
     }
 
-    void FixedUpdate()
-    {
-        if (!isDashing)
-        {
-            Vector2 forceDescente = new Vector2(0, -0.2f); 
-            Vector2 deplacementFinal = direction * vitesse + forceDescente;
-            Rb.velocity = deplacementFinal;
-        }
-    }
 
     void Update()
     {
@@ -59,6 +59,25 @@ public class Personnage : MonoBehaviour
         Inclinaison();
         animator.SetFloat("Vitesse", Rb.velocity.magnitude);
         animator.SetBool("IsDashing", isDashing);
+
+        if (!isDashing)
+        {
+            Vector2 forceDescente = new Vector2(0, -0.2f); 
+            Vector2 deplacementFinal = direction * vitesse + forceDescente;
+            Rb.velocity = deplacementFinal;
+        }
+        if (progressionArme <= 10)
+        {
+            typeAttaque = TypeAttaque.Directe;
+        }
+        else if (progressionArme > 10 && progressionArme <= 20)
+        {
+            typeAttaque = TypeAttaque.Spirale;
+        }
+        else 
+        {
+            typeAttaque = TypeAttaque.Poursuite;
+        }
     }
 
     void Dash()
@@ -165,7 +184,7 @@ public class Personnage : MonoBehaviour
         if (direction == Vector2.zero) return;
         {
             Vector2 decalage = direction.normalized * 0.7f;
-            GameObject projectile = Instantiate(projectilePrefab, (Vector2)transform.position + decalage, Quaternion.identity);
+            GameObject projectile = Instantiate(projectileDirect, (Vector2)transform.position + decalage, Quaternion.identity);
             projectile.GetComponent<Projectile>().Initialiser(direction, null, Projectile.TypeProjectile.Directe,gameObject);
 
         }
@@ -176,7 +195,7 @@ public class Personnage : MonoBehaviour
         if (direction == Vector2.zero) return;
         {    
             Vector2 decalage = direction.normalized * 0.7f;
-            GameObject projectile = Instantiate(projectilePrefab, (Vector2)transform.position + decalage, Quaternion.identity);
+            GameObject projectile = Instantiate(projectileSpiral, (Vector2)transform.position + decalage, Quaternion.identity);
             projectile.GetComponent<Projectile>().Initialiser(direction, null, Projectile.TypeProjectile.Spirale, gameObject);
         }
     }
@@ -186,15 +205,65 @@ public class Personnage : MonoBehaviour
         cibleActuelle = ChercherEnnemi();
         if (cibleActuelle != null)
         {
-            GameObject projectile = Instantiate(projectilePrefab, pointDeTir.position, Quaternion.identity);
+            GameObject projectile = Instantiate(projectilePoursuite, pointDeTir.position, Quaternion.identity);
             projectile.GetComponent<Projectile>().Initialiser(Vector2.zero, cibleActuelle, Projectile.TypeProjectile.Poursuite, gameObject);
         }
        
     }   
     public void SubirDegats(int degats)
-    {   
-        vie -= degats;
+    {
+        viesRestantes -= degats;
 
+        if (viesRestantes <= 0)
+        {
+            coeursRestants--;
+            if (coeursRestants >= 0)
+            {
+                transform.position = Vector2.zero;
+                viesRestantes = 100;
+            }
+            else
+            {
+                Debug.Log("Fin du jeu");
+                Time.timeScale = 0f;
+            }
+        }
+    }
+
+
+    public void AjouterVie(int vies)
+    {
+        
+        viesRestantes += vies;
+    }
+
+    public void AjouterCoeur(int coeur)
+    {
+        if (coeursRestants < 3)
+        {
+        coeursRestants += coeur;
+        }
+    }
+
+    public void AugmenterBarreArme(int points)
+    {
+        progressionArme += points;
+    }
+
+    public void ChangerArme()
+    {
+        if (progressionArme >= 0 && progressionArme < 10)
+        {
+            progressionArme = 15; 
+        }
+        else if (progressionArme >= 10 && progressionArme < 20)
+        {
+            progressionArme = 25; 
+        }
+        else if (progressionArme >= 20 && progressionArme < 30)
+        {
+            progressionArme = 5; 
+        }
     }
     
 }

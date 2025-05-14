@@ -3,6 +3,7 @@ using UnityEngine;
 
 
 
+
 public class Projectile : MonoBehaviour
 {
     public enum TypeProjectile { Directe, Spirale, Poursuite }
@@ -80,7 +81,8 @@ public class Projectile : MonoBehaviour
         Slimes cibleSlime = collision.gameObject.GetComponent<Slimes>();
         if (cibleSlime != null)
         {
-            cibleSlime.SubirDegats(1);
+            int degats = UnityEngine.Random.Range(10, 20);
+            cibleSlime.SubirDegats(degats);
             Destroy(gameObject);
             return;
         }
@@ -88,7 +90,8 @@ public class Projectile : MonoBehaviour
         Personnage ciblePerso = collision.gameObject.GetComponent<Personnage>();
         if (ciblePerso != null)
         {
-            ciblePerso.SubirDegats(1);
+            int degats = UnityEngine.Random.Range(5, 15);
+            ciblePerso.SubirDegats(degats);
             Destroy(gameObject);
             return;
         }

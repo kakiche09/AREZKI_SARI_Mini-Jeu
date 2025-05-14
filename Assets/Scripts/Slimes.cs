@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 
@@ -17,13 +18,19 @@ public class Slimes : MonoBehaviour
     [SerializeField] private Transform pointDeTir;
     [SerializeField] private int vie = 50;
 
+    [SerializeField] private GameObject objetScore;
+    [SerializeField] private GameObject objetVie;
+    [SerializeField] private GameObject objetCoeur;
+    [SerializeField] private GameObject objetArme;
+
 
 
     public Rigidbody2D Rb { get; private set; }
     public Animator animator                { get; private set;   }
     public SpriteRenderer spriteRenderer    { get; private set; }
-    private float tempsEntreAttaques = 0.4f;
+    private float tempsEntreAttaques = 0.8f;
     private float tempsDerniereAttaque = 0f;
+    private Personnage joueur;
 
 
     void Start()
@@ -33,6 +40,7 @@ public class Slimes : MonoBehaviour
         animator = GetComponent<Animator>();
         etatActuel = Etats.Recherche;
         positionInitiale = transform.position;
+        joueur = FindObjectOfType<Personnage>();
 
     }
 
@@ -84,7 +92,7 @@ public class Slimes : MonoBehaviour
 
     Transform Chercherjoueur()
     {
-        float rayonDetection = 5f;    
+        float rayonDetection = 8f;    
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, rayonDetection);
         float distanceMin = Mathf.Infinity;
         Transform ennemiLePlusProche = null;
@@ -134,6 +142,13 @@ public class Slimes : MonoBehaviour
         if (vie <= 0)
         {
             etatActuel = Etats.Mort;
+            if (Random.value < 0.40f) Instantiate(objetScore, transform.position, Quaternion.identity);
+            if (Random.value < 0.10f) Instantiate(objetVie, transform.position, Quaternion.identity);
+            if (Random.value < 0.05f) Instantiate(objetCoeur, transform.position, Quaternion.identity);
+            if (Random.value < 0.30f) Instantiate(objetArme, transform.position, Quaternion.identity);
+
+            int score = Random.Range(5, 20);
+            joueur.score += score;
         }
     }
 }
