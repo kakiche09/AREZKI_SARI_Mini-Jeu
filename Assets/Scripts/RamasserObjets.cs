@@ -25,7 +25,7 @@ public class RamasserObjets : MonoBehaviour
                     joueur.AjouterCoeur(1);
                     break;
                 case TypeObjet.Arme:
-                    joueur.AugmenterBarreArme(Random.Range(2, 4));
+                    joueur.AugmenterBarreArme(Random.Range(4, 6));
                     break;
             }
             Destroy(gameObject);

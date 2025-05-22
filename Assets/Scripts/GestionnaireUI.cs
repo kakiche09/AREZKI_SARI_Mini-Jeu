@@ -15,8 +15,12 @@ public class GestionnaireUI : MonoBehaviour
     [SerializeField] private GameObject arme2;
     [SerializeField] private GameObject arme3;
 
+    // Texte et chronomètre
+    public TMP_Text chronoTexte;
+    public float TempsPasse;
 
-    
+
+
     void Update()
     {
         if (personnage == null) return;
@@ -25,6 +29,7 @@ public class GestionnaireUI : MonoBehaviour
         MettreAJourScore();
         MettreAJourArmes();
         MettreAJourVie();
+        MettreAJourChrono();
     }
 
     private void MettreAJourVie()
@@ -66,5 +71,13 @@ public class GestionnaireUI : MonoBehaviour
         }
         // Mettre à jour la barre d'arme
         sliderArme.value = personnage.progressionArme;
+    }
+    
+    private void MettreAJourChrono()
+    {
+        TempsPasse += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(TempsPasse / 60F);
+        int secondes = Mathf.FloorToInt(TempsPasse - minutes * 60);
+        chronoTexte.text = string.Format("{0:0}:{1:00}", minutes, secondes);
     }
 }

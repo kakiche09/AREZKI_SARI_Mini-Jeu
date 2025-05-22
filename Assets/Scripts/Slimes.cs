@@ -28,7 +28,7 @@ public class Slimes : MonoBehaviour
     public Rigidbody2D Rb { get; private set; }
     public Animator animator                { get; private set;   }
     public SpriteRenderer spriteRenderer    { get; private set; }
-    private float tempsEntreAttaques = 0.8f;
+    private float tempsEntreAttaques = 1f;
     private float tempsDerniereAttaque = 0f;
     private Personnage joueur;
 

@@ -26,6 +26,9 @@ public class Personnage : MonoBehaviour
     [SerializeField] private GameObject projectileDirect;
     [SerializeField] private GameObject projectileSpiral;
     [SerializeField] private GameObject projectilePoursuite;
+    [SerializeField] private TMPro.TMP_Text texteScore;
+    [SerializeField]private TMPro.TMP_Text chronoTexte;
+
 
     private Transform cibleActuelle;
     public enum TypeAttaque { Directe, Spirale, Poursuite };
@@ -35,6 +38,11 @@ public class Personnage : MonoBehaviour
     public int ViesRestantes => viesRestantes;
     public int score = 0;
     public int progressionArme = 0;
+    private bool jeuTermine = false;
+    [SerializeField] private GameObject canvasFinDeJeu;
+    private float positionArriveeX = 20f;
+    private GestionnaireUI gestionnaireUI;
+
 
     void Start()
     {
@@ -43,11 +51,18 @@ public class Personnage : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         inputReader = GetComponent<PlayerInputReader>();
         animator = GetComponent<Animator>();
+        gestionnaireUI = FindObjectOfType<GestionnaireUI>();
         vitesse = 3f;
+
 
         inputReader.BS.callback += Dash;
         inputReader.LS_m.callback += Deplacer;
         inputReader.BE.callback += Attaquer;
+
+        if (canvasFinDeJeu != null)
+        {
+            canvasFinDeJeu.SetActive(false);
+        }
 
     }
 
@@ -59,7 +74,11 @@ public class Personnage : MonoBehaviour
         Inclinaison();
         animator.SetFloat("Vitesse", Rb.velocity.magnitude);
         animator.SetBool("IsDashing", isDashing);
-
+        
+        if (transform.position.x >= positionArriveeX && !jeuTermine)
+        {
+            TerminerJeu();
+        }
         if (!isDashing)
         {
             Vector2 forceDescente = new Vector2(0, -0.2f);
@@ -219,7 +238,18 @@ public class Personnage : MonoBehaviour
             coeursRestants--;
             if (coeursRestants >= 0)
             {
-                transform.position = Vector2.zero;
+                // Vérifie si la position en X est supérieure à 10
+                if (transform.position.x > 10)
+                {
+                    // Si c'est le cas, respawn à la position actuelle -10 sur X et Y = 0
+                    transform.position = new Vector2(transform.position.x - 10, 0f);
+                }
+                else
+                {
+                    // Si la position X est <= 10, respawn à la position actuelle avec Y = 0
+                    transform.position = new Vector2(transform.position.x, 0f);
+                }
+
                 viesRestantes = 100;
             }
             else
@@ -250,5 +280,27 @@ public class Personnage : MonoBehaviour
         progressionArme += points;
     }
 
+    public void TerminerJeu()
+    {
+        if (!jeuTermine)
+        {
+            jeuTermine = true;            
+            // Mettre le temps en pause pour arrêter le jeu
+            Time.timeScale = 0f;
 
+            // Afficher le Canvas de fin de jeu
+            if (canvasFinDeJeu != null)
+            {
+                canvasFinDeJeu.SetActive(true);
+
+                // Récupérer et afficher le temps de jeu
+                int minutes = Mathf.FloorToInt(gestionnaireUI.TempsPasse / 60F);
+                int secondes = Mathf.FloorToInt(gestionnaireUI.TempsPasse - minutes * 60);
+                chronoTexte.text = string.Format("Votre temps de jeu: {0:0}:{1:00}", minutes, secondes);
+
+                // Afficher le score final
+                texteScore.text = "Votre score final: " + score;
+            }
+        }
+    }
 }
