@@ -338,16 +338,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 14929230}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &14929232
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1163,16 +1162,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 36060032}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &36060034
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2017,16 +2015,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 810481102}
-  pointDeTir: {fileID: 83340598}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 810481102}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &83340600
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3124,16 +3121,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 119595448}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &119595450
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3619,16 +3615,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 132836400}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &132836402
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3896,16 +3891,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 91874019}
-  pointDeTir: {fileID: 138117696}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 91874019}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &138117698
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4995,16 +4989,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 188715146}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &188715148
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5319,16 +5312,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 208910117}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &208910119
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5723,16 +5715,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 213214789}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &213214791
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5916,16 +5907,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 810481102}
-  pointDeTir: {fileID: 219337656}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 810481102}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &219337658
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6193,16 +6183,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 246932435}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &246932437
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7053,16 +7042,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 266906871}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &266906873
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7491,6 +7479,7 @@ GameObject:
   - component: {fileID: 308178994}
   - component: {fileID: 308178999}
   - component: {fileID: 308179000}
+  - component: {fileID: 308179001}
   m_Layer: 5
   m_Name: CanvasInfos
   m_TagString: Untagged
@@ -7660,8 +7649,106 @@ MonoBehaviour:
   arme1: {fileID: 1307318335}
   arme2: {fileID: 1777467594}
   arme3: {fileID: 918073672}
+  sonAmbiance: {fileID: 8300000, guid: eccf7e46138d46f40aa9397d10e7f835, type: 3}
+  audioSource2: {fileID: 308179001}
   chronoTexte: {fileID: 1782616316}
   TempsPasse: 0
+--- !u!82 &308179001
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308178993}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &313743160
 GameObject:
   m_ObjectHideFlags: 0
@@ -8869,16 +8956,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 810481102}
-  pointDeTir: {fileID: 374090985}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 810481102}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &374090987
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9146,16 +9232,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 91874019}
-  pointDeTir: {fileID: 382010247}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 91874019}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &382010249
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9339,16 +9424,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 385592545}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &385592547
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10263,16 +10347,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 415131112}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &415131114
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10501,6 +10584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 433232340}
+  - component: {fileID: 433232341}
   m_Layer: 0
   m_Name: Ennemis
   m_TagString: Untagged
@@ -10527,6 +10611,102 @@ Transform:
   - {fileID: 1240807803}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &433232341
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433232339}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &444731033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10758,16 +10938,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 91874019}
-  pointDeTir: {fileID: 446597282}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 91874019}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &446597284
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11230,16 +11409,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 91874019}
-  pointDeTir: {fileID: 468334211}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 91874019}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &468334213
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -12062,6 +12240,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12159,6 +12338,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cible: {fileID: 638967023}
   vitesseSuivi: 5
+--- !u!82 &519420034
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &520949068
 GameObject:
   m_ObjectHideFlags: 0
@@ -13266,16 +13541,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 571849821}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &571849823
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14136,16 +14410,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 810481102}
-  pointDeTir: {fileID: 597963925}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 810481102}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &597963927
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14329,16 +14602,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 604691654}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &604691656
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14887,6 +15159,7 @@ GameObject:
   - component: {fileID: 638967031}
   - component: {fileID: 638967030}
   - component: {fileID: 638967032}
+  - component: {fileID: 638967033}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -15070,6 +15343,16 @@ MonoBehaviour:
   score: 0
   progressionArme: 0
   canvasFinDeJeu: {fileID: 2022183495}
+  sonAttaque: {fileID: 8300000, guid: 72a90a55a18daf545b59407082b234dc, type: 3}
+  sonDash: {fileID: 8300000, guid: c6afdd35f14ab484286e47f54885b9c3, type: 3}
+  sonDegats: {fileID: 8300000, guid: ca2c6d5849e0e284180fd9e829b47705, type: 3}
+  sonMort: {fileID: 8300000, guid: 4df605ee78472484abc8ac6d442a5bce, type: 3}
+  sonVies: {fileID: 8300000, guid: 2841e4bc779432c43ad7f67df46f12cf, type: 3}
+  sonArme: {fileID: 8300000, guid: 0c51e8965c1f4d247a20c4ecd47ac5b7, type: 3}
+  sonScore: {fileID: 8300000, guid: f02066eab8ee30f48b9573416d1d8365, type: 3}
+  sonFinJeu: {fileID: 8300000, guid: 528f89e32caf52c46ad54ea9725170a4, type: 3}
+  audioSource1: {fileID: 638967033}
+  sonFond: {fileID: 8300000, guid: 4fcdb73c9653451449388c15768c2036, type: 3}
 --- !u!114 &638967030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15126,6 +15409,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasInfo: {fileID: 308178993}
   menuPause: {fileID: 412495314}
+--- !u!82 &638967033
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638967017}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &641676719
 GameObject:
   m_ObjectHideFlags: 0
@@ -16036,16 +16415,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 706368676}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &706368678
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -16481,16 +16859,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 716645647}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &716645649
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -16758,16 +17135,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 721699337}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &721699339
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -17360,16 +17736,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 91874019}
-  pointDeTir: {fileID: 738236280}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 91874019}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!1 &740889780
 GameObject:
   m_ObjectHideFlags: 0
@@ -17778,16 +18153,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 748638445}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &748638447
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -18619,16 +18993,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 779854527}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &779854529
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -18812,16 +19185,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 91874019}
-  pointDeTir: {fileID: 790674554}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 91874019}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &790674556
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -19429,16 +19801,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 800362158}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &800362160
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -20023,16 +20394,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 818676235}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &818676237
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -20838,16 +21208,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 864778734}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &864778730
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23071,16 +23440,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 937998610}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &937998612
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -24524,16 +24892,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 1008616554}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1008616556
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -24717,16 +25084,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 1009092909}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1009092911
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -24910,16 +25276,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 91874019}
-  pointDeTir: {fileID: 1009157048}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 91874019}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1009157050
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -25916,7 +26281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -213, y: 241.6}
+  m_AnchoredPosition: {x: -213, y: 244.88}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1055229948
@@ -25939,7 +26304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Felicitations
+  m_text: Game OVER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f33c3e78cbaeebe4cb88e5bb89c0b89e, type: 2}
   m_sharedMaterial: {fileID: -8972906736141723690, guid: f33c3e78cbaeebe4cb88e5bb89c0b89e, type: 2}
@@ -25966,8 +26331,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -26064,16 +26429,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 91874019}
-  pointDeTir: {fileID: 1058080153}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 91874019}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1058080155
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -26768,16 +27132,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 810481102}
-  pointDeTir: {fileID: 1111183644}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 810481102}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1111183646
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -26961,16 +27324,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 91874019}
-  pointDeTir: {fileID: 1115558099}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 91874019}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1115558101
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -28033,16 +28395,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 1176659687}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1176659689
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -29771,16 +30132,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 1246925000}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1246925002
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -31141,16 +31501,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 810481102}
-  pointDeTir: {fileID: 1301005909}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 810481102}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1301005911
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -31897,16 +32256,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 91874019}
-  pointDeTir: {fileID: 1315163230}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 91874019}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1315163232
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -32924,7 +33282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220.07, y: 13.7}
+  m_AnchoredPosition: {x: -100, y: 13.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1351020604
@@ -32981,7 +33339,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -33010,7 +33368,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -425.1887, w: 0}
+  m_margin: {x: 0, y: 0, z: -485.64835, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -33699,16 +34057,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 810481102}
-  pointDeTir: {fileID: 1381900930}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 810481102}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1381900932
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -34757,16 +35114,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 1429599809}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1429599811
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -35603,16 +35959,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 810481102}
-  pointDeTir: {fileID: 1464536025}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 810481102}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!1 &1468269395
 GameObject:
   m_ObjectHideFlags: 0
@@ -51404,7 +51759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -286.3, y: -199.3}
+  m_AnchoredPosition: {x: -135, y: -199.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1554978375
@@ -51461,7 +51816,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -51490,7 +51845,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -425.1887, w: 0}
+  m_margin: {x: 0, y: 0, z: -574.12573, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -51877,16 +52232,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 1562994907}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!1 &1570631506
 GameObject:
   m_ObjectHideFlags: 0
@@ -53823,16 +54177,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 1629431049}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1629431051
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -55170,16 +55523,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1007531560}
-  pointDeTir: {fileID: 1700641519}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1007531560}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1700641521
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -58367,16 +58719,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 1395199460}
-  pointDeTir: {fileID: 1873361654}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 1395199460}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1873361656
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -60232,16 +60583,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 810481102}
-  pointDeTir: {fileID: 1937053082}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 810481102}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1937053084
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -60743,16 +61093,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798bace659f9ce442be3055779d303e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etatActuel: 0
-  vitesse: 1
-  distanceMax: 3
-  projectilePrefab: {fileID: 810481102}
-  pointDeTir: {fileID: 1947399547}
-  vie: 50
   objetScore: {fileID: 2088900516}
   objetVie: {fileID: 1594576090}
   objetCoeur: {fileID: 592909247}
   objetArme: {fileID: 1619373865}
+  projectilePrefab: {fileID: 810481102}
+  audioSource: {fileID: 433232341}
+  sonAttaque: {fileID: 8300000, guid: 3ccce29a519a11644a7734c2e0361a26, type: 3}
+  sonMort: {fileID: 8300000, guid: c07540395a703ae46b9b159f75378bc8, type: 3}
+  sonDegats: {fileID: 8300000, guid: 484aae70c752fb14ba949281ae672d0d, type: 3}
 --- !u!70 &1947399549
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

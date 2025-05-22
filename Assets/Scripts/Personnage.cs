@@ -27,8 +27,10 @@ public class Personnage : MonoBehaviour
     [SerializeField] private GameObject projectileSpiral;
     [SerializeField] private GameObject projectilePoursuite;
     [SerializeField] private TMPro.TMP_Text texteScore;
-    [SerializeField]private TMPro.TMP_Text chronoTexte;
+    [SerializeField] private TMPro.TMP_Text chronoTexte;
 
+    private float tempsEntreAttaques = 0.3f;
+    private bool peutAttaquer = true;
 
     private Transform cibleActuelle;
     public enum TypeAttaque { Directe, Spirale, Poursuite };
@@ -43,6 +45,20 @@ public class Personnage : MonoBehaviour
     private float positionArriveeX = 20f;
     private GestionnaireUI gestionnaireUI;
 
+    [SerializeField] private AudioClip sonAttaque;
+    [SerializeField] private AudioClip sonDash;
+    [SerializeField] private AudioClip sonDegats;
+    [SerializeField] private AudioClip sonMort;
+    [SerializeField] private AudioClip sonVies;
+    [SerializeField] private AudioClip sonArme;
+    [SerializeField] private AudioClip sonScore;
+    [SerializeField] private AudioClip sonFinJeu;
+
+    [SerializeField] private AudioSource audioSource1;
+    [SerializeField] private AudioClip sonFond;
+
+
+
 
     void Start()
     {
@@ -52,11 +68,18 @@ public class Personnage : MonoBehaviour
         inputReader = GetComponent<PlayerInputReader>();
         animator = GetComponent<Animator>();
         gestionnaireUI = FindObjectOfType<GestionnaireUI>();
+
+        audioSource1 = GetComponent<AudioSource>();
+        audioSource1.clip = sonFond;
+        audioSource1.loop = true;
+        audioSource1.Play();
+
         vitesse = 3f;
 
 
         inputReader.BS.callback += Dash;
         inputReader.LS_m.callback += Deplacer;
+
         inputReader.BE.callback += Attaquer;
 
         if (canvasFinDeJeu != null)
@@ -74,11 +97,12 @@ public class Personnage : MonoBehaviour
         Inclinaison();
         animator.SetFloat("Vitesse", Rb.velocity.magnitude);
         animator.SetBool("IsDashing", isDashing);
-        
-        if (transform.position.x >= positionArriveeX && !jeuTermine)
+
+        if ((transform.position.x >= positionArriveeX && !jeuTermine) || (CoeursRestants <= 0))
         {
             TerminerJeu();
         }
+
         if (!isDashing)
         {
             Vector2 forceDescente = new Vector2(0, -0.2f);
@@ -104,6 +128,7 @@ public class Personnage : MonoBehaviour
         if (canDash && !isDashing && direction != Vector2.zero)
         {
             StartCoroutine(DashRoutine());
+            audioSource1.PlayOneShot(sonDash);
         }
     }
 
@@ -184,17 +209,24 @@ public class Personnage : MonoBehaviour
 
     void Attaquer()
     {
-        switch (typeAttaque)
+        if (peutAttaquer)
         {
-            case TypeAttaque.Directe:
-                AttaqueLigne();
-                break;
-            case TypeAttaque.Spirale:
-                AttaqueSpirale();
-                break;
-            case TypeAttaque.Poursuite:
-                AttaquePoursuite();
-                break;
+            switch (typeAttaque)
+            {
+                case TypeAttaque.Directe:
+                    AttaqueLigne();
+                    break;
+                case TypeAttaque.Spirale:
+                    AttaqueSpirale();
+                    break;
+                case TypeAttaque.Poursuite:
+                    AttaquePoursuite();
+                    break;
+            }
+
+            // Après l'attaque, on lance la coroutine pour le cooldown
+            StartCoroutine(AttaqueCooldown());
+            audioSource1.PlayOneShot(sonAttaque);
         }
     }
 
@@ -232,10 +264,12 @@ public class Personnage : MonoBehaviour
     public void SubirDegats(int degats)
     {
         viesRestantes -= degats;
-
+        audioSource1.PlayOneShot(sonDegats);
         if (viesRestantes <= 0)
         {
+
             coeursRestants--;
+            audioSource1.PlayOneShot(sonMort);
             if (coeursRestants >= 0)
             {
                 // Vérifie si la position en X est supérieure à 10
@@ -252,19 +286,14 @@ public class Personnage : MonoBehaviour
 
                 viesRestantes = 100;
             }
-            else
-            {
-                Debug.Log("Fin du jeu");
-                Time.timeScale = 0f;
-            }
         }
     }
 
 
     public void AjouterVie(int vies)
     {
-
         viesRestantes += vies;
+        audioSource1.PlayOneShot(sonVies);
     }
 
     public void AjouterCoeur(int coeur)
@@ -272,19 +301,21 @@ public class Personnage : MonoBehaviour
         if (coeursRestants < 3)
         {
             coeursRestants += coeur;
+            audioSource1.PlayOneShot(sonMort);
         }
     }
 
     public void AugmenterBarreArme(int points)
     {
         progressionArme += points;
+        audioSource1.PlayOneShot(sonArme);
     }
 
     public void TerminerJeu()
     {
         if (!jeuTermine)
         {
-            jeuTermine = true;            
+            jeuTermine = true;
             // Mettre le temps en pause pour arrêter le jeu
             Time.timeScale = 0f;
 
@@ -301,6 +332,15 @@ public class Personnage : MonoBehaviour
                 // Afficher le score final
                 texteScore.text = "Votre score final: " + score;
             }
+            // Jouer le son de fin de jeu
+            audioSource1.PlayOneShot(sonFinJeu);
         }
+    }
+
+    IEnumerator AttaqueCooldown()
+    {
+        peutAttaquer = false;  // Empêche d'attaquer pendant le délai
+        yield return new WaitForSeconds(tempsEntreAttaques);  // Attendre le temps de cooldown
+        peutAttaquer = true;  // Permet à nouveau d'attaquer
     }
 }

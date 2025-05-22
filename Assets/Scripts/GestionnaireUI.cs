@@ -14,12 +14,23 @@ public class GestionnaireUI : MonoBehaviour
     [SerializeField] private GameObject arme1;
     [SerializeField] private GameObject arme2;
     [SerializeField] private GameObject arme3;
+    
+    [SerializeField] private AudioClip sonAmbiance;
+    [SerializeField] AudioSource audioSource2;
 
     // Texte et chronomètre
     public TMP_Text chronoTexte;
     public float TempsPasse;
 
-
+   
+    void Start()
+    {
+        // Initialiser le chronomètre
+        audioSource2 = GetComponent<AudioSource>();
+        audioSource2.clip = sonAmbiance;
+        audioSource2.loop = true;
+        audioSource2.Play();
+    }
 
     void Update()
     {
