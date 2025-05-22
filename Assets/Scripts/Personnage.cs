@@ -8,7 +8,7 @@ public class Personnage : MonoBehaviour
 {
     private PlayerInputReader inputReader;
     private Vector2 direction;
-    public Rigidbody2D Rb {get; private set;}
+    public Rigidbody2D Rb { get; private set; }
     [SerializeField] private float dashForce = 20f;
     [SerializeField] private float dashDuration = 0.16f;
     [SerializeField] private float dashCooldown = 1f;
@@ -16,10 +16,10 @@ public class Personnage : MonoBehaviour
     private bool canDash = true;
     [SerializeField] public float vitesse { get; private set; }
 
-    public SpriteRenderer spriteRenderer    { get; protected set; }
-    public NavMeshAgent agent               { get; private set;   }
-    public Animator animator                { get; private set;   }
-    private int viesRestantes =100;
+    public SpriteRenderer spriteRenderer { get; protected set; }
+    public NavMeshAgent agent { get; private set; }
+    public Animator animator { get; private set; }
+    private int viesRestantes = 100;
 
     [SerializeField] private Transform pointDeTir;
     [SerializeField] private float porteeRecherche = 10f;
@@ -34,10 +34,11 @@ public class Personnage : MonoBehaviour
     public int CoeursRestants => coeursRestants;
     public int ViesRestantes => viesRestantes;
     public int score = 0;
-    public int progressionArme = 2;
+    public int progressionArme = 0;
 
     void Start()
     {
+        // Charger les données 
         Rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         inputReader = GetComponent<PlayerInputReader>();
@@ -46,15 +47,14 @@ public class Personnage : MonoBehaviour
 
         inputReader.BS.callback += Dash;
         inputReader.LS_m.callback += Deplacer;
-        inputReader.BE.callback += Attaquer; 
-        inputReader.BN.callback += ChangerArme;
+        inputReader.BE.callback += Attaquer;
 
-        
     }
 
 
     void Update()
     {
+
         flipX();
         Inclinaison();
         animator.SetFloat("Vitesse", Rb.velocity.magnitude);
@@ -62,7 +62,7 @@ public class Personnage : MonoBehaviour
 
         if (!isDashing)
         {
-            Vector2 forceDescente = new Vector2(0, -0.2f); 
+            Vector2 forceDescente = new Vector2(0, -0.2f);
             Vector2 deplacementFinal = direction * vitesse + forceDescente;
             Rb.velocity = deplacementFinal;
         }
@@ -74,7 +74,7 @@ public class Personnage : MonoBehaviour
         {
             typeAttaque = TypeAttaque.Spirale;
         }
-        else 
+        else
         {
             typeAttaque = TypeAttaque.Poursuite;
         }
@@ -109,7 +109,7 @@ public class Personnage : MonoBehaviour
 
     void Deplacer(Vector2 dir)
     {
-        direction = dir.normalized; 
+        direction = dir.normalized;
     }
 
     public void flipX()
@@ -123,7 +123,7 @@ public class Personnage : MonoBehaviour
             spriteRenderer.flipX = true;
         }
     }
-    
+
     void Inclinaison()
     {
         float vx = -Rb.velocity.x;
@@ -137,16 +137,16 @@ public class Personnage : MonoBehaviour
         if (currentZ > 180f) currentZ -= 360f;
 
         float newZ = Mathf.Lerp(currentZ, targetAngle, Time.deltaTime * 5f);
-        transform.rotation = Quaternion.Euler(0f, 0f, newZ);  
+        transform.rotation = Quaternion.Euler(0f, 0f, newZ);
     }
 
     Transform ChercherEnnemi()
     {
-        float rayonDetection = 20f;    
+        float rayonDetection = 20f;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, rayonDetection);
         float distanceMin = Mathf.Infinity;
         Transform ennemiLePlusProche = null;
-        foreach (var collider  in colliders)
+        foreach (var collider in colliders)
         {
             Slimes potentielEnnemi = collider.GetComponent<Slimes>();
             if (potentielEnnemi != null)
@@ -178,22 +178,22 @@ public class Personnage : MonoBehaviour
                 break;
         }
     }
-    
+
     void AttaqueLigne()
     {
         if (direction == Vector2.zero) return;
         {
             Vector2 decalage = direction.normalized * 0.7f;
             GameObject projectile = Instantiate(projectileDirect, (Vector2)transform.position + decalage, Quaternion.identity);
-            projectile.GetComponent<Projectile>().Initialiser(direction, null, Projectile.TypeProjectile.Directe,gameObject);
+            projectile.GetComponent<Projectile>().Initialiser(direction, null, Projectile.TypeProjectile.Directe, gameObject);
 
         }
     }
-    
+
     void AttaqueSpirale()
     {
         if (direction == Vector2.zero) return;
-        {    
+        {
             Vector2 decalage = direction.normalized * 0.7f;
             GameObject projectile = Instantiate(projectileSpiral, (Vector2)transform.position + decalage, Quaternion.identity);
             projectile.GetComponent<Projectile>().Initialiser(direction, null, Projectile.TypeProjectile.Spirale, gameObject);
@@ -208,8 +208,8 @@ public class Personnage : MonoBehaviour
             GameObject projectile = Instantiate(projectilePoursuite, pointDeTir.position, Quaternion.identity);
             projectile.GetComponent<Projectile>().Initialiser(Vector2.zero, cibleActuelle, Projectile.TypeProjectile.Poursuite, gameObject);
         }
-       
-    }   
+
+    }
     public void SubirDegats(int degats)
     {
         viesRestantes -= degats;
@@ -233,7 +233,7 @@ public class Personnage : MonoBehaviour
 
     public void AjouterVie(int vies)
     {
-        
+
         viesRestantes += vies;
     }
 
@@ -241,7 +241,7 @@ public class Personnage : MonoBehaviour
     {
         if (coeursRestants < 3)
         {
-        coeursRestants += coeur;
+            coeursRestants += coeur;
         }
     }
 
@@ -250,20 +250,5 @@ public class Personnage : MonoBehaviour
         progressionArme += points;
     }
 
-    public void ChangerArme()
-    {
-        if (progressionArme >= 0 && progressionArme < 10)
-        {
-            progressionArme = 15; 
-        }
-        else if (progressionArme >= 10 && progressionArme < 20)
-        {
-            progressionArme = 25; 
-        }
-        else if (progressionArme >= 20 && progressionArme < 30)
-        {
-            progressionArme = 5; 
-        }
-    }
-    
+
 }

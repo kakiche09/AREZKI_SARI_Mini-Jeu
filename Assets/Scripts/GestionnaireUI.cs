@@ -10,25 +10,27 @@ public class GestionnaireUI : MonoBehaviour
     [SerializeField] private GameObject coeur3;
     [SerializeField] private TMP_Text texteScore;
     [SerializeField] private Personnage personnage;
-    
-    [SerializeField] private GameObject arme1; 
-    [SerializeField] private GameObject arme2;
-    [SerializeField] private GameObject arme3; 
 
+    [SerializeField] private GameObject arme1;
+    [SerializeField] private GameObject arme2;
+    [SerializeField] private GameObject arme3;
+
+
+    
     void Update()
     {
         if (personnage == null) return;
 
         MettreAJourCoeurs();
-        MettreAJourScore(); 
+        MettreAJourScore();
         MettreAJourArmes();
         MettreAJourVie();
     }
+
     private void MettreAJourVie()
     {
         sliderVie.value = personnage.ViesRestantes;
     }
-
 
     private void MettreAJourScore()
     {
@@ -38,9 +40,8 @@ public class GestionnaireUI : MonoBehaviour
     private void MettreAJourCoeurs()
     {
         int v = personnage.CoeursRestants;
-        Debug.Log("Vies restantes : " + v);
-        if (v==2) coeur3.SetActive(false);
-        if (v==1) coeur2.SetActive(false);
+        if (v == 2) coeur3.SetActive(false);
+        if (v == 1) coeur2.SetActive(false);
     }
 
     private void MettreAJourArmes()
@@ -49,9 +50,9 @@ public class GestionnaireUI : MonoBehaviour
         arme1.SetActive(false);
         arme2.SetActive(false);
         arme3.SetActive(false);
-        
+
         // Activer seulement l'image correspondante à l'arme sélectionnée
-        switch(personnage.typeAttaque)
+        switch (personnage.typeAttaque)
         {
             case Personnage.TypeAttaque.Directe:
                 arme1.SetActive(true);
