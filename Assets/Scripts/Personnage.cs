@@ -29,7 +29,6 @@ public class Personnage : MonoBehaviour
     [SerializeField] private AudioClip sonFond;
     [SerializeField] private GameObject canvasFinDeJeu;
 
-
     public enum TypeAttaque { Directe, Spirale, Poursuite };
     public PlayerInputReader inputReader        { get; protected set; }
     public Vector2 direction                    { get; protected set; }
@@ -52,8 +51,7 @@ public class Personnage : MonoBehaviour
     public bool jeuTermine                  { get; protected set; }
     public float positionArriveeX           { get; protected set; }
     public float rayonDetection             { get; protected set; }
-
-    public int score { get; set; }
+    public int score                        { get; set; }
 
     public int CoeursRestants => coeursRestants;
     public int ViesRestantes => viesRestantes;

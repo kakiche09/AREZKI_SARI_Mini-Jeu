@@ -6,9 +6,6 @@ public class RamasserObjets : MonoBehaviour
     public enum TypeObjet { Score, Vie, Coeur, Arme } 
     public TypeObjet typeObjet { get; protected set; }
 
-
-
-    
     private void OnTriggerEnter2D(Collider2D collider)
     {
         // Vérifie si le joueur entre en collision avec l'objet
