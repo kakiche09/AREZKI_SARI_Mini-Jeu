@@ -113,13 +113,12 @@ public class Projectile : MonoBehaviour
         Personnage ciblePerso = collision.gameObject.GetComponent<Personnage>();
         if (ciblePerso != null)
         {
-            int degats = UnityEngine.Random.Range(5, 15);
+            int degats = UnityEngine.Random.Range(5, 10);
             ciblePerso.SubirDegats(degats);
             Destroy(gameObject);
             return;
         }
 
-        // Vérifier si le projectile touche un mur
         Destroy(gameObject);
     }
 

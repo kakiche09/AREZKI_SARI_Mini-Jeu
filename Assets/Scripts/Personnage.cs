@@ -7,11 +7,8 @@ using UnityEngine.AI;
 public class Personnage : MonoBehaviour
 {
     
-    [SerializeField] private float dashForce = 20f;
-    [SerializeField] private float dashDuration = 0.16f;
-    [SerializeField] private float dashCooldown = 1f;
+    
     [SerializeField] private Transform pointDeTir;
-    [SerializeField] private float porteeRecherche = 10f;
     [SerializeField] private GameObject projectileDirect;
     [SerializeField] private GameObject projectileSpiral;
     [SerializeField] private GameObject projectilePoursuite;
@@ -40,18 +37,22 @@ public class Personnage : MonoBehaviour
     public TypeAttaque typeAttaque              { get; protected set; }
     public GestionnaireUI gestionnaireUI        { get; protected set; }
 
-    public float vitesse                    { get; protected set; }
-    public bool isDashing                   { get; protected set; }
-    public bool canDash                     { get; protected set; }
-    public int viesRestantes                { get; protected set; }
-    public float tempsEntreAttaques         { get; protected set; }
-    public bool peutAttaquer                { get; protected set; }
-    public int coeursRestants               { get; protected set; }
-    public int progressionArme              { get; protected set; }
-    public bool jeuTermine                  { get; protected set; }
-    public float positionArriveeX           { get; protected set; }
-    public float rayonDetection             { get; protected set; }
-    public int score                        { get; set; }
+    public float vitesse                        { get; protected set; }
+    public bool isDashing                       { get; protected set; }
+    public bool canDash                         { get; protected set; }
+    public int viesRestantes                    { get; protected set; }
+    public float tempsEntreAttaques             { get; protected set; }
+    public bool peutAttaquer                    { get; protected set; }
+    public int coeursRestants                   { get; protected set; }
+    public int progressionArme                  { get; protected set; }
+    public bool jeuTermine                      { get; protected set; }
+    public float positionArriveeX               { get; protected set; }
+    public float rayonDetection                 { get; protected set; }
+    public float dashForce                      { get; protected set; }
+    public float dashDuration                   { get; protected set; }
+    public float dashCooldown                   { get; protected set; }
+    public float porteeRecherche                { get; protected set; }
+    public int score                            { get; set; }
 
     public int CoeursRestants => coeursRestants;
     public int ViesRestantes => viesRestantes;
@@ -102,6 +103,10 @@ public class Personnage : MonoBehaviour
         jeuTermine = false;
         positionArriveeX = 320f;
         rayonDetection = 20f;
+        dashForce = 20f;
+        dashDuration = 0.16f;
+        dashCooldown = 1f;
+        porteeRecherche = 10f;
     }
 
 
@@ -350,7 +355,7 @@ public class Personnage : MonoBehaviour
         if (coeursRestants < 3)
         {
             coeursRestants += coeur;
-            audioSource1.PlayOneShot(sonMort);
+            audioSource1.PlayOneShot(sonVies);
         }
     }
 
