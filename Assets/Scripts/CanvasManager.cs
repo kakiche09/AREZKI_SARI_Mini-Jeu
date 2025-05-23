@@ -4,35 +4,41 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
 {
-    private PlayerInputReader inputReader;
-    [SerializeField] private GameObject canvasInfo; // Référence au Canvas d'information
-    [SerializeField] private GameObject menuPause;  // Référence au menu de pause
+    public PlayerInputReader inputReader        { get; protected set; }
+
+    [SerializeField] private GameObject canvasInfo; 
+    [SerializeField] private GameObject menuPause;  
 
     // Start is called before the first frame update
     void Start()
     {
         inputReader = GetComponent<PlayerInputReader>();
-        inputReader.Menu.callback += ChangerCanvas; // Associer la touche Menu à la méthode ChangerCanvas
-        Time.timeScale = 0f;         // Mettre le temps en pause
-        menuPause.SetActive(true); // Activer le menu de pause
-        canvasInfo.SetActive(false); // Désactiver le Canvas d'information
+
+        inputReader.Menu.callback += ChangerCanvas;
+
+        Time.timeScale = 0f;        
+        
+        menuPause.SetActive(true); 
+        canvasInfo.SetActive(false);
         
     }
 
     // Changer de Canvas entre le CanvasInfo et le menuPause
     void ChangerCanvas()
     {
+        // Si le canvasInfo est actif, on le cache et on affiche le menuPause
+        // Sinon, on affiche le canvasInfo et on cache le menuPause
         if (canvasInfo.activeSelf)
         {
             canvasInfo.SetActive(false);
             menuPause.SetActive(true);
-            Time.timeScale = 0f; // Mettre le temps en pause
+            Time.timeScale = 0f;
         }
         else
         {
             canvasInfo.SetActive(true);
             menuPause.SetActive(false);
-            Time.timeScale = 1f; // Reprendre le temps
+            Time.timeScale = 1f;
         }
     }
 }

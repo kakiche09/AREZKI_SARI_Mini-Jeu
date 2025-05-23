@@ -7,23 +7,35 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public enum TypeProjectile { Directe, Spirale, Poursuite }
-    [SerializeField] private float vitesse = 8f;
-    [SerializeField] private float tempsDeVie = 4f;
-    [SerializeField] private float rayonSpirale = 10f;
-    [SerializeField] private float frequenceSpirale = 4f; 
-    [SerializeField] private float tempsDeVieSpirale = 2f;
-    private GameObject lanceur;
-    private float vitesseActuelle;
-    [SerializeField] private float acceleration = 50f; 
-    private Vector2 direction;
-    private Transform cible;
-    private float angleSpirale;
-    private TypeProjectile typeProjectile;
+
+    public float vitesse;
+    public float tempsDeVie;
+    public float rayonSpirale;
+    public float frequenceSpirale;
+    public float tempsDeVieSpirale;
+    public float acceleration;
+
+    public GameObject lanceur               { get; protected set; }
+    public float vitesseActuelle            { get; protected set; }
+    public Vector2 direction                { get; protected set; }
+    public Transform cible                  { get; protected set; }
+    public float angleSpirale               { get; protected set; }
+    public TypeProjectile typeProjectile    { get; protected set; }
+
+
+    
+    private void Start()
+    {
+        // Initialiser les attributs
+        SetAttributes();
+    }
+
 
     void Update()
     {
         switch (typeProjectile)
         {
+            // Appeler la méthode de déplacement appropriée en fonction du type de projectile
             case TypeProjectile.Directe:
                 DeplacementLigne();
                 break;
@@ -36,8 +48,16 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    // Initialiser le projectile avec la direction, la cible, le type et le lanceur
+    // directionInitiale : direction de départ du projectile    
+    // cibleSuivie : cible que le projectile doit suivre
+    // type : type de projectile (Directe, Spirale, Poursuite)
+    // lancePar : le lanceur du projectile
+    // On détruit le projectile après un certain temps
+    // tempsDeVie : durée de vie du projectile
     public void Initialiser(Vector2 directionInitiale, Transform cibleSuivie, TypeProjectile type, GameObject lancePar)
     {
+        // Initialiser les attributs du projectile
         direction = directionInitiale.normalized;
         cible = cibleSuivie;
         typeProjectile = type;
@@ -46,16 +66,16 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, tempsDeVie);
     }
 
-
+    // Déplacement en ligne droite
     public void DeplacementLigne()
     {
         GetComponent<Rigidbody2D>().velocity = direction * vitesse;
     }
 
-
+    // Déplacement en spirale
     private void DeplacementSpirale()
     {
-        angleSpirale += 360f * frequenceSpirale * Time.deltaTime;        
+        angleSpirale += 360f * frequenceSpirale * Time.deltaTime;
         Vector2 perpendiculaire = new Vector2(-direction.y, direction.x);
         float offset = Mathf.Sin(angleSpirale * Mathf.Deg2Rad) * rayonSpirale;
         Vector2 spiraleOffset = perpendiculaire * offset;
@@ -63,8 +83,10 @@ public class Projectile : MonoBehaviour
         transform.Translate(mouvement, Space.World);
     }
 
+    // Déplacement en suivant la cible
     private void DeplacementPoursuite()
     {
+        // Déplacement vers la cible en la suivant
         if (cible == null) return;
 
         Vector2 directionVoulue = ((Vector2)cible.position - (Vector2)transform.position).normalized;
@@ -73,11 +95,12 @@ public class Projectile : MonoBehaviour
         transform.Translate(direction * vitesseActuelle * Time.deltaTime, Space.World);
     }
 
+    // Fonction pour gérer les collisions du projectile
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if (collision.gameObject == lanceur) return;
 
+        // Vérifier si le projectile touche un ennemi ou un joueur
         Slimes cibleSlime = collision.gameObject.GetComponent<Slimes>();
         if (cibleSlime != null)
         {
@@ -86,7 +109,7 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        // Vérifier si le projectile touche un joueur
         Personnage ciblePerso = collision.gameObject.GetComponent<Personnage>();
         if (ciblePerso != null)
         {
@@ -95,7 +118,19 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
+
+        // Vérifier si le projectile touche un mur
         Destroy(gameObject);
+    }
+
+    // fonction SetAttributes qui permet de définir les attributs du projectile
+    private void SetAttributes()
+    {
+        vitesse = 8f;
+        tempsDeVie = 4f;
+        rayonSpirale = 10f;
+        frequenceSpirale = 4f;
+        tempsDeVieSpirale = 2f;
+        acceleration = 50f;
     }
 }

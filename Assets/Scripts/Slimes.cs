@@ -36,6 +36,8 @@ public class Slimes : MonoBehaviour
     [SerializeField] AudioClip sonMort;
     [SerializeField] AudioClip sonDegats;
 
+
+
     void Start()
     {
         // Charger les données
@@ -193,13 +195,15 @@ public class Slimes : MonoBehaviour
         vie -= degats;
         audioSource.PlayOneShot(sonDegats);
         if (vie <= 0)
-        {
+        {   
             etatActuel = Etats.Mort;
+            // Générer des objets aléatoires qui permettent de gagner des points, de la vie, des coeurs ou  faire progresser notre arme
             if (Random.value < 0.40f) Instantiate(objetScore, transform.position, Quaternion.identity);
             if (Random.value < 0.10f) Instantiate(objetVie, transform.position, Quaternion.identity);
             if (Random.value < 0.05f) Instantiate(objetCoeur, transform.position, Quaternion.identity);
             if (Random.value < 0.30f) Instantiate(objetArme, transform.position, Quaternion.identity);
 
+            // Ajouter un score aléatoire au joueur
             int score = Random.Range(5, 20);
             joueur.score += score;
         }

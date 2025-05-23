@@ -9,23 +9,21 @@ public class GestionnaireUI : MonoBehaviour
     [SerializeField] private GameObject coeur2;
     [SerializeField] private GameObject coeur3;
     [SerializeField] private TMP_Text texteScore;
+    [SerializeField] private TMP_Text chronoTexte;
     [SerializeField] private Personnage personnage;
-
     [SerializeField] private GameObject arme1;
     [SerializeField] private GameObject arme2;
     [SerializeField] private GameObject arme3;
-    
     [SerializeField] private AudioClip sonAmbiance;
     [SerializeField] AudioSource audioSource2;
 
-    // Texte et chronomètre
-    public TMP_Text chronoTexte;
-    public float TempsPasse;
+    public float TempsPasse             { get; protected set; }
 
-   
+
+
     void Start()
     {
-        // Initialiser le chronomètre
+        TempsPasse = 0f;
         audioSource2 = GetComponent<AudioSource>();
         audioSource2.clip = sonAmbiance;
         audioSource2.loop = true;
@@ -36,6 +34,7 @@ public class GestionnaireUI : MonoBehaviour
     {
         if (personnage == null) return;
 
+        // Mettre à jour les éléments de l'interface utilisateur
         MettreAJourCoeurs();
         MettreAJourScore();
         MettreAJourArmes();
@@ -43,16 +42,19 @@ public class GestionnaireUI : MonoBehaviour
         MettreAJourChrono();
     }
 
+    // Mettre à jour la barre de vie
     private void MettreAJourVie()
     {
         sliderVie.value = personnage.ViesRestantes;
     }
 
+    // Mettre à jour le score
     private void MettreAJourScore()
     {
         texteScore.text = "Score : " + personnage.score;
     }
 
+    // Mettre à jour les coeurs
     private void MettreAJourCoeurs()
     {
         int v = personnage.CoeursRestants;
@@ -60,6 +62,7 @@ public class GestionnaireUI : MonoBehaviour
         if (v == 1) coeur2.SetActive(false);
     }
 
+    // Mettre à jour les armes
     private void MettreAJourArmes()
     {
 
@@ -84,6 +87,7 @@ public class GestionnaireUI : MonoBehaviour
         sliderArme.value = personnage.progressionArme;
     }
     
+    // Mettre à jour le chronomètre
     private void MettreAJourChrono()
     {
         TempsPasse += Time.deltaTime;

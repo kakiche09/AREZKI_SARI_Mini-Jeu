@@ -6,21 +6,10 @@ using UnityEngine.AI;
 
 public class Personnage : MonoBehaviour
 {
-    private PlayerInputReader inputReader;
-    private Vector2 direction;
-    public Rigidbody2D Rb { get; private set; }
+    
     [SerializeField] private float dashForce = 20f;
     [SerializeField] private float dashDuration = 0.16f;
     [SerializeField] private float dashCooldown = 1f;
-    private bool isDashing = false;
-    private bool canDash = true;
-    [SerializeField] public float vitesse { get; private set; }
-
-    public SpriteRenderer spriteRenderer { get; protected set; }
-    public NavMeshAgent agent { get; private set; }
-    public Animator animator { get; private set; }
-    private int viesRestantes = 100;
-
     [SerializeField] private Transform pointDeTir;
     [SerializeField] private float porteeRecherche = 10f;
     [SerializeField] private GameObject projectileDirect;
@@ -28,23 +17,6 @@ public class Personnage : MonoBehaviour
     [SerializeField] private GameObject projectilePoursuite;
     [SerializeField] private TMPro.TMP_Text texteScore;
     [SerializeField] private TMPro.TMP_Text chronoTexte;
-
-    private float tempsEntreAttaques = 0.3f;
-    private bool peutAttaquer = true;
-
-    private Transform cibleActuelle;
-    public enum TypeAttaque { Directe, Spirale, Poursuite };
-    public TypeAttaque typeAttaque;
-    private int coeursRestants = 3;
-    public int CoeursRestants => coeursRestants;
-    public int ViesRestantes => viesRestantes;
-    public int score = 0;
-    public int progressionArme = 0;
-    private bool jeuTermine = false;
-    [SerializeField] private GameObject canvasFinDeJeu;
-    private float positionArriveeX = 20f;
-    private GestionnaireUI gestionnaireUI;
-
     [SerializeField] private AudioClip sonAttaque;
     [SerializeField] private AudioClip sonDash;
     [SerializeField] private AudioClip sonDegats;
@@ -53,11 +25,39 @@ public class Personnage : MonoBehaviour
     [SerializeField] private AudioClip sonArme;
     [SerializeField] private AudioClip sonScore;
     [SerializeField] private AudioClip sonFinJeu;
-
     [SerializeField] private AudioSource audioSource1;
     [SerializeField] private AudioClip sonFond;
+    [SerializeField] private GameObject canvasFinDeJeu;
 
 
+    public enum TypeAttaque { Directe, Spirale, Poursuite };
+    public PlayerInputReader inputReader        { get; protected set; }
+    public Vector2 direction                    { get; protected set; }
+    public Rigidbody2D Rb                       { get; protected set; }
+    public SpriteRenderer spriteRenderer        { get; protected set; }
+    public NavMeshAgent agent                   { get; protected set; }
+    public Animator animator                    { get; protected set; }
+    public Transform cibleActuelle              { get; protected set; }
+    public TypeAttaque typeAttaque              { get; protected set; }
+    public GestionnaireUI gestionnaireUI        { get; protected set; }
+
+    public float vitesse                    { get; protected set; }
+    public bool isDashing                   { get; protected set; }
+    public bool canDash                     { get; protected set; }
+    public int viesRestantes                { get; protected set; }
+    public float tempsEntreAttaques         { get; protected set; }
+    public bool peutAttaquer                { get; protected set; }
+    public int coeursRestants               { get; protected set; }
+    public int progressionArme              { get; protected set; }
+    public bool jeuTermine                  { get; protected set; }
+    public float positionArriveeX           { get; protected set; }
+    public float rayonDetection             { get; protected set; }
+
+    public int score { get; set; }
+
+    public int CoeursRestants => coeursRestants;
+    public int ViesRestantes => viesRestantes;
+    public int ProgressionArme => progressionArme;
 
 
     void Start()
@@ -68,18 +68,18 @@ public class Personnage : MonoBehaviour
         inputReader = GetComponent<PlayerInputReader>();
         animator = GetComponent<Animator>();
         gestionnaireUI = FindObjectOfType<GestionnaireUI>();
-
         audioSource1 = GetComponent<AudioSource>();
+
+        // Charger le son de fond
         audioSource1.clip = sonFond;
         audioSource1.loop = true;
         audioSource1.Play();
 
-        vitesse = 3f;
-
-
+        // Initialiser les attributs
+        SetAttributes();
+        
         inputReader.BS.callback += Dash;
         inputReader.LS_m.callback += Deplacer;
-
         inputReader.BE.callback += Attaquer;
 
         if (canvasFinDeJeu != null)
@@ -89,26 +89,48 @@ public class Personnage : MonoBehaviour
 
     }
 
+    // Fonction pour initialiser les attributs du personnage
+    void SetAttributes()
+    {
+        vitesse = 5f;
+        isDashing = false;
+        canDash = true;
+        viesRestantes = 100;
+        tempsEntreAttaques = 0.3f;
+        peutAttaquer = true;
+        coeursRestants = 3;
+        score = 0;
+        progressionArme = 0;
+        jeuTermine = false;
+        positionArriveeX = 320f;
+        rayonDetection = 20f;
+    }
+
 
     void Update()
     {
-
+        
         flipX();
         Inclinaison();
+        
+        // Mettre à jour la vitesse de l'animation
+        // et l'état de dash
         animator.SetFloat("Vitesse", Rb.velocity.magnitude);
         animator.SetBool("IsDashing", isDashing);
 
+        // Mettre à jour la direction du personnage
         if ((transform.position.x >= positionArriveeX && !jeuTermine) || (CoeursRestants <= 0))
         {
             TerminerJeu();
         }
-
+        // Vérifier si le personnage est en train de dash
         if (!isDashing)
         {
             Vector2 forceDescente = new Vector2(0, -0.2f);
             Vector2 deplacementFinal = direction * vitesse + forceDescente;
             Rb.velocity = deplacementFinal;
         }
+        // Gerer la progression de l'arme
         if (progressionArme <= 10)
         {
             typeAttaque = TypeAttaque.Directe;
@@ -123,6 +145,7 @@ public class Personnage : MonoBehaviour
         }
     }
 
+    // Fonction pour gérer le dash
     void Dash()
     {
         if (canDash && !isDashing && direction != Vector2.zero)
@@ -132,6 +155,7 @@ public class Personnage : MonoBehaviour
         }
     }
 
+    // Coroutine pour gérer le dash
     IEnumerator DashRoutine()
     {
         isDashing = true;
@@ -151,11 +175,14 @@ public class Personnage : MonoBehaviour
         canDash = true;
     }
 
+    // Fonction pour déplacer le personnage
     void Deplacer(Vector2 dir)
     {
         direction = dir.normalized;
     }
 
+    // Fonction pour gérer la direction du sprite
+    // en fonction de la vitesse
     public void flipX()
     {
         if (Rb.velocity.x > 0.1f)
@@ -168,15 +195,18 @@ public class Personnage : MonoBehaviour
         }
     }
 
+    // Fonction pour incliner le personnage
     void Inclinaison()
     {
         float vx = -Rb.velocity.x;
         float maxAngle = 25f;
         float targetAngle = Mathf.Clamp(vx / vitesse, -1f, 1f) * maxAngle;
 
+        // Si la vitesse est très faible, on remet l'angle à 0
         if (Mathf.Abs(vx) < 0.05f)
             targetAngle = 0f;
 
+        // On utilise Mathf.Lerp pour lisser la rotation
         float currentZ = transform.rotation.eulerAngles.z;
         if (currentZ > 180f) currentZ -= 360f;
 
@@ -184,12 +214,17 @@ public class Personnage : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, newZ);
     }
 
+    // Fonction pour chercher un ennemi
+    // On utilise un rayon de détection pour trouver l'ennemi le plus proche
     Transform ChercherEnnemi()
     {
-        float rayonDetection = 20f;
+        // On cherche tous les colliders dans un rayon de détection
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, rayonDetection);
         float distanceMin = Mathf.Infinity;
         Transform ennemiLePlusProche = null;
+
+        // On parcourt tous les colliders trouvés
+        // et on cherche le plus proche
         foreach (var collider in colliders)
         {
             Slimes potentielEnnemi = collider.GetComponent<Slimes>();
@@ -204,9 +239,13 @@ public class Personnage : MonoBehaviour
                 }
             }
         }
+        // Si un ennemi est trouvé, on le retourne
+        // Sinon, on retourne null
         return ennemiLePlusProche;
     }
 
+    // Fonction pour gérer l'attaque
+    // On utilise un switch pour choisir le type d'attaque
     void Attaquer()
     {
         if (peutAttaquer)
@@ -230,6 +269,8 @@ public class Personnage : MonoBehaviour
         }
     }
 
+    // Fonctio pour l'aattaque directe
+    // On utilise un decalage pour le point de tir
     void AttaqueLigne()
     {
         if (direction == Vector2.zero) return;
@@ -241,6 +282,8 @@ public class Personnage : MonoBehaviour
         }
     }
 
+    // Fonction pour l'attaque en spirale
+    // On utilise un angle pour faire tourner le projectile
     void AttaqueSpirale()
     {
         if (direction == Vector2.zero) return;
@@ -251,6 +294,8 @@ public class Personnage : MonoBehaviour
         }
     }
 
+    // Fonction pour l'attaque en poursuite
+    // On cherche l'ennemi le plus proche et on le suit
     void AttaquePoursuite()
     {
         cibleActuelle = ChercherEnnemi();
@@ -261,13 +306,18 @@ public class Personnage : MonoBehaviour
         }
 
     }
+
+    // Fonction pour gérer les dégâts
+    // On utilise un son pour les dégâts et un autre pour la mort
     public void SubirDegats(int degats)
     {
         viesRestantes -= degats;
         audioSource1.PlayOneShot(sonDegats);
+
+        // Vérifie si le joueur a perdu toutes ses vies
+        // Si c'est le cas, on enlève un coeur
         if (viesRestantes <= 0)
         {
-
             coeursRestants--;
             audioSource1.PlayOneShot(sonMort);
             if (coeursRestants >= 0)
@@ -289,13 +339,14 @@ public class Personnage : MonoBehaviour
         }
     }
 
-
+    // Fonction pour ajouter des vies
     public void AjouterVie(int vies)
     {
         viesRestantes += vies;
         audioSource1.PlayOneShot(sonVies);
     }
 
+    // Fonction pour ajouter des coeurs
     public void AjouterCoeur(int coeur)
     {
         if (coeursRestants < 3)
@@ -305,12 +356,14 @@ public class Personnage : MonoBehaviour
         }
     }
 
+    // Fonction pour ajouter des points au score
     public void AugmenterBarreArme(int points)
     {
         progressionArme += points;
         audioSource1.PlayOneShot(sonArme);
     }
 
+    // Fonction pour terminer le jeu
     public void TerminerJeu()
     {
         if (!jeuTermine)
@@ -337,6 +390,7 @@ public class Personnage : MonoBehaviour
         }
     }
 
+    // Fonction pour gérer le cooldown de l'attaque
     IEnumerator AttaqueCooldown()
     {
         peutAttaquer = false;  // Empêche d'attaquer pendant le délai
