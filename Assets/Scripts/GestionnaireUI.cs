@@ -45,7 +45,7 @@ public class GestionnaireUI : MonoBehaviour
     // Mettre à jour la barre de vie
     private void MettreAJourVie()
     {
-        sliderVie.value = personnage.ViesRestantes;
+        sliderVie.value = personnage.viesRestantes;
     }
 
     // Mettre à jour le score
@@ -57,7 +57,7 @@ public class GestionnaireUI : MonoBehaviour
     // Mettre à jour les coeurs
     private void MettreAJourCoeurs()
     {
-        int v = personnage.CoeursRestants;
+        int v = personnage.coeursRestants;
         if (v == 2) coeur3.SetActive(false);
         if (v == 1) coeur2.SetActive(false);
     }

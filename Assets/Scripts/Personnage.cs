@@ -6,8 +6,7 @@ using UnityEngine.AI;
 
 public class Personnage : MonoBehaviour
 {
-    
-    
+
     [SerializeField] private Transform pointDeTir;
     [SerializeField] private GameObject projectileDirect;
     [SerializeField] private GameObject projectileSpiral;
@@ -40,11 +39,8 @@ public class Personnage : MonoBehaviour
     public float vitesse                        { get; protected set; }
     public bool isDashing                       { get; protected set; }
     public bool canDash                         { get; protected set; }
-    public int viesRestantes                    { get; protected set; }
     public float tempsEntreAttaques             { get; protected set; }
     public bool peutAttaquer                    { get; protected set; }
-    public int coeursRestants                   { get; protected set; }
-    public int progressionArme                  { get; protected set; }
     public bool jeuTermine                      { get; protected set; }
     public float positionArriveeX               { get; protected set; }
     public float rayonDetection                 { get; protected set; }
@@ -52,11 +48,13 @@ public class Personnage : MonoBehaviour
     public float dashDuration                   { get; protected set; }
     public float dashCooldown                   { get; protected set; }
     public float porteeRecherche                { get; protected set; }
-    public int score                            { get; set; }
 
-    public int CoeursRestants => coeursRestants;
-    public int ViesRestantes => viesRestantes;
-    public int ProgressionArme => progressionArme;
+    public int coeursRestants;
+    public int progressionArme;
+    public int score;                 
+    public int viesRestantes;
+
+
 
 
     void Start()
@@ -112,17 +110,16 @@ public class Personnage : MonoBehaviour
 
     void Update()
     {
-        
         flipX();
         Inclinaison();
-        
+
         // Mettre à jour la vitesse de l'animation
         // et l'état de dash
         animator.SetFloat("Vitesse", Rb.velocity.magnitude);
         animator.SetBool("IsDashing", isDashing);
 
         // Mettre à jour la direction du personnage
-        if ((transform.position.x >= positionArriveeX && !jeuTermine) || (CoeursRestants <= 0))
+        if ((transform.position.x >= positionArriveeX && !jeuTermine) || (coeursRestants <= 0))
         {
             TerminerJeu();
         }
@@ -344,7 +341,8 @@ public class Personnage : MonoBehaviour
 
     // Fonction pour ajouter des vies
     public void AjouterVie(int vies)
-    {
+    {   
+        Debug.Log("Ajout de vies : " + vies);
         viesRestantes += vies;
         audioSource1.PlayOneShot(sonVies);
     }

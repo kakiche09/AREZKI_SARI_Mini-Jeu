@@ -4,16 +4,17 @@ using UnityEngine.SocialPlatforms.Impl;
 public class RamasserObjets : MonoBehaviour
 {
     public enum TypeObjet { Score, Vie, Coeur, Arme } 
-    public TypeObjet typeObjet { get; protected set; }
+    public TypeObjet typeObjet;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         // Vérifie si le joueur entre en collision avec l'objet
         Personnage joueur = collider.GetComponent<Personnage>();
-
+        Debug.Log("Collision avec : " + collider.name);
         // Si le joueur entre en collision avec l'objet, on lui donne un bonus
         if (joueur != null)
         {   
+            Debug.Log("Objet ramassé : " + typeObjet);
             // On vérifie le type d'objet et on applique le bonus correspondant
             switch (typeObjet)
             {
